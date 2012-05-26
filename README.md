@@ -1,0 +1,4 @@
+schult.info
+===========
+
+my homepage
