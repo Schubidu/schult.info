@@ -1,0 +1,136 @@
+@animation_duration: 8s;
+@background_opacity: .2;
+@content_background_opacity: .7;
+
+@keyframes ani-body {
+  0% {
+    background: rgba(0, 127, 255, @background_opacity);
+  }
+  15% {
+    background: rgba(0, 0, 255, @background_opacity);
+  }
+  25% {
+    background: rgba(255, 0, 255, @background_opacity);
+  }
+  45% {
+    background: rgba(255, 0, 0, @background_opacity);
+  }
+  60% {
+    background: rgba(255, 255, 0, @background_opacity);
+  }
+  80% {
+    background: rgba(0, 255, 0, @background_opacity);
+  }
+  100% {
+    background: rgba(0, 127, 255, @background_opacity);
+  }
+}
+
+@keyframes ani-content {
+  0% {
+    background: rgba(0, 127, 255, @content_background_opacity);
+//    color: white;
+  }
+  15% {
+    background: rgba(0, 0, 255, @content_background_opacity);
+//    color: white;
+  }
+  25% {
+    background: rgba(255, 0, 255, @content_background_opacity);
+//    color: #333;
+  }
+  45% {
+    background: rgba(255, 0, 0, @content_background_opacity);
+//    color: white;
+  }
+  60% {
+    background: rgba(255, 255, 0, @content_background_opacity);
+//    color: #333;
+  }
+  80% {
+    background: rgba(0, 255, 0, @content_background_opacity);
+//    color: #333;
+  }
+  100% {
+    background: rgba(0, 127, 255, @content_background_opacity);
+//    color: white;
+  }
+}
+
+._reset() {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline
+}
+
+ol, ul {
+  list-style: none
+}
+
+body, h1, html, p, li, ul, a, img {
+  ._reset;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html {
+  font-family: "Trebuchet MS", Helvetica, sans-serif
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  background: rgba(0, 0, 0, @background_opacity);
+  animation: ani-body;
+  animation-duration: @animation_duration;
+  animation-iteration-count: infinite;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.content {
+  width: 50vw;
+  color: #333;
+  background: rgba(0, 0, 0, @content_background_opacity);
+  border: 1px solid currentColor;
+  animation: ani-content;
+  animation-duration: @animation_duration;
+  animation-iteration-count: infinite;
+
+  > * {
+    &:not(:first-child) {
+      border-top: 1px solid currentColor;
+    }
+  }
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 9vw;
+
+  + p {
+    padding: .3em .6em;
+  }
+}
+
+p {
+  font-size: 4vw;
+}
+
+a, img {
+  display: block;
+  width: 100%;
+}
