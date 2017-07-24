@@ -1,0 +1,130 @@
+:root {
+    --animationDuration: 8s;
+    --backgroundOpacity: .2;
+    --contentBackgroundOpacity: .7;
+}
+
+@keyframes ani-body {
+    0% {
+        background: rgba(0, 127, 255, var(--backgroundOpacity, 1));
+    }
+    15% {
+        background: rgba(0, 0, 255, var(--backgroundOpacity, 1));
+    }
+    25% {
+        background: rgba(255, 0, 255, var(--backgroundOpacity, 1));
+    }
+    45% {
+        background: rgba(255, 0, 0, var(--backgroundOpacity, 1));
+    }
+    60% {
+        background: rgba(255, 255, 0, var(--backgroundOpacity, 1));
+    }
+    80% {
+        background: rgba(0, 255, 0, var(--backgroundOpacity, 1));
+    }
+    100% {
+        background: rgba(0, 127, 255, var(--backgroundOpacity, 1));
+    }
+}
+
+@keyframes ani-content {
+    0% {
+        background: rgba(0, 127, 255, var(--contentBackgroundOpacity, 1));
+    }
+    15% {
+        background: rgba(0, 0, 255, var(--contentBackgroundOpacity, 1));
+    }
+    25% {
+        background: rgba(255, 0, 255, var(--contentBackgroundOpacity, 1));
+    }
+    45% {
+        background: rgba(255, 0, 0, var(--contentBackgroundOpacity, 1));
+    }
+    60% {
+        background: rgba(255, 255, 0, var(--contentBackgroundOpacity, 1));
+    }
+    80% {
+        background: rgba(0, 255, 0, var(--contentBackgroundOpacity, 1));
+    }
+    100% {
+        background: rgba(0, 127, 255, var(--contentBackgroundOpacity, 1));
+    }
+}
+
+ol, ul {
+    list-style: none
+}
+
+body, h1, html, p, li, ul, a, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    font-family: "Trebuchet MS", Helvetica, sans-serif
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    background-color: rgba(0, 127, 255, 0.2);
+    animation: ani-body;
+    animation-duration: var(--animationDuration, 1s);
+    animation-iteration-count: infinite;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "DIN Next W01 Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.content {
+    width: 50vw;
+    color: #333;
+    background-color: rgba(0, 127, 255, .7);
+    border: 1px solid currentColor;
+    animation: ani-content;
+    animation-duration: var(--animationDuration, 1s);
+    animation-iteration-count: infinite;
+}
+
+.content > *:not(:first-child) {
+    border-top: 1px solid currentColor;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 9vw;
+    font-family: "DIN Next W01 Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0 -5px 35px rgba(255, 255, 255, 0.3);
+    padding-top: 0.15em;
+}
+
+h1 + p {
+    padding: .3em .6em;
+}
+
+p {
+    font-size: 4vw;
+}
+
+a, img {
+    display: block;
+    width: 100%;
+}
