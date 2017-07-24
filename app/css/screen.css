@@ -79,9 +79,7 @@ body, html {
 
 html {
     background-color: rgba(0, 127, 255, 0.2);
-    animation: ani-body;
-    animation-duration: var(--animationDuration, 1s);
-    animation-iteration-count: infinite;
+    animation: ani-body var(--animationDuration, 1s) infinite;
 }
 
 body {
@@ -98,9 +96,7 @@ body {
     color: #333;
     background-color: rgba(0, 127, 255, .7);
     border: 1px solid currentColor;
-    animation: ani-content;
-    animation-duration: var(--animationDuration, 1s);
-    animation-iteration-count: infinite;
+    animation: ani-content var(--animationDuration, 1s) infinite;
 }
 
 .content > *:not(:first-child) {
